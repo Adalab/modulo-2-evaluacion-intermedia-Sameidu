@@ -28,10 +28,10 @@ function player() {
 }
 
 
-function war(playerRace, shadowRaces) {
-    if (playerRace > shadowRace) {
+function war(playerRace, mordor) {
+    if (playerRace > mordor) {
         result.innerHTML = `Gana la alianza`
-    } else if (playerRace === shadowRaces) {
+    } else if (playerRace === mordor) {
         result.innerHTML = `Empate de fuerzas`
     } else {
         result.innerHTML = `Gana la sombra`
