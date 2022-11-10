@@ -9,16 +9,20 @@
     <title>Middle Earth</title>
 </head>
 <body>
+
     <main class="main">
+        <div class="img"></div>
+
+        <section class="cont-game">
         <header class="header">
             <h2 class="game">Juego</h2>
             <h1 class="title">Los anillos del poder</h1>
         </header>
 
-         <section class="text">
-             <p class="lore">¡La Tierra Media está en guerra! En ella lucharán razas leales a Sauron contra otras bondadosas que no quieren que el mal reine sobre sus tierras.</p>
-             <h3 class="desc">Eres un jugador del ejército del bien, no olvides tu misión de ganar la batalla.</h3>
-         </section>
+        <section class="text">
+            <p class="lore">¡La Tierra Media está en guerra! En ella lucharán razas leales a Sauron contra otras bondadosas que no quieren que el mal reine sobre sus tierras.</p>
+            <h3 class="desc">Eres un jugador del ejército del bien, no olvides tu misión de ganar la batalla.</h3>
+        </section>
 
         <form action="">
             <select class="js-select" name="" id="">
@@ -29,8 +33,11 @@
                 <option value="5">Elfos</option>
             </select>
             <button class="js-button btn">Batalla</button>
+            <button class="js-reset hidden reset">Jugar de nuevo</button>
         </form>
         <p class="js-result result">¡Comienza la batalla!</p>
+        <p class="js-points points ">Luz: 0 ||  Sombra: 0</p>
+    </section>
     </main>
     <script src="./js/main.js"></script>
 </body>

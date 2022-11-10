@@ -2,7 +2,24 @@
 
 const select = document.querySelector('.js-select');
 const button = document.querySelector('.js-button');
+const reset = document.querySelector('.js-reset');
 const result = document.querySelector('.js-result');
+const points = document.querySelector('.js-points');
+
+let count = 0;
+let lightPoints = 0;
+let shadowPoints= 0;
+
+
+function counter() {
+    count++;
+    console.log(`Numero de partidas: ${count}`);
+    if (count === 10){
+        button.classList.add('hidden');
+        reset.classList.remove('hidden')
+        button.innerHTML = `Volver a jugar`
+    }
+}
 
 function randomNumber(max) {
     return Math.ceil(Math.random() * max);
@@ -34,16 +51,20 @@ function war() {
     const pc = shadowRace()
     if (user > pc) {
         result.innerHTML = `Gana la alianza`
+        lightPoints++;
     } else if (user === pc) {
         result.innerHTML = `Empate de fuerzas`
     } else {
         result.innerHTML = `Gana la sombra`
+        shadowPoints++;
     }
+    points.innerHTML = `Luz: ${lightPoints}  ||  Sombra: ${shadowPoints}`
 }
 
 function handleClick(event) {
     event.preventDefault();
     war();
+    counter()
 }
 
 button.addEventListener('click', handleClick)
