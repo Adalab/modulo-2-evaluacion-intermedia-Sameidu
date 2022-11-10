@@ -3,14 +3,13 @@
 const select = document.querySelector('.js-select');
 const button = document.querySelector('.js-button');
 const result = document.querySelector('.js-result');
+let random = randomNumber(5)
 
 function randomNumber(max) {
     return Math.ceil(Math.random() * max);
    };
 
-function shadowRace() {
-    let random = randomNumber(5)
-    console.log(random)
+function shadowRace(random) {
     let mordor = 0;
     if (random === 1 || random === 2 || random === 3){
         mordor = 2;
@@ -29,12 +28,10 @@ function player() {
     return playerRace;
 }
 
-function war() {
-    const user = player();
-    const pc = shadowRace()
-    if (user > pc) {
+function war(playerRace, mordor) {
+    if (playerRace > mordor) {
         result.innerHTML = `Gana la alianza`
-    } else if (user === pc) {
+    } else if (playerRace === mordor) {
         result.innerHTML = `Empate de fuerzas`
     } else {
         result.innerHTML = `Gana la sombra`
